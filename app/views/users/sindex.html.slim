@@ -1,0 +1,20 @@
+p#notice
+  = notice
+.header  
+ .page_wrapper.top_page_wrapper
+    image src= "namelogo.png"
+    
+    br
+    - if current_user = nil
+     = link_to 'ログイン', login_path
+    -else
+     = link_to 'ログアウト', logout_path, method: :delete
+
+.body
+ .top_page_body
+
+
+
+
+
+.footer

@@ -1,0 +1,10 @@
+h1 ユーザーログイン画面
+
+= form_with scope: :session, local: true do |f|
+ = f.label :name, '保護者氏名'
+ = f.text_field :name
+ 
+ = f.label :password
+ = f.password_field :password
+ 
+ = f.submit "ログイン"
