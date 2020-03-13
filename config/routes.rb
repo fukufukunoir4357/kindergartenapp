@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  root 'users#index'
+  get 'static_pages/home'
+  get 'static_pages/history'
+  get 'static_pages/everyday'
+  get 'static_pages/support'
+  get 'static_pages/entry'
+  get 'static_pages/publicinfo'
+  get 'static_pages/recruit'
+  get 'static_pages/accsess'
+  root 'statics_pages#home'
   resources :users
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
