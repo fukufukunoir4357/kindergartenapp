@@ -1,5 +1,9 @@
 class StaticPagesController < ApplicationController
+
+#静的ページのページ遷移用コントローラ
+  
   def home
+    render :home
   end
 
   def history
@@ -20,6 +24,6 @@ class StaticPagesController < ApplicationController
   def recruit
   end
 
-  def accsess
+  def access
   end
 end

@@ -1,0 +1,40 @@
+
+#サイト上部のナビゲーションバーをパーシャル化
+    
+    nav.navbar.navbar-expand-md.bg-warning.navbar-light[style=""]
+      a.navbar-brand[href= root_path]
+        b
+          | 八王子すみれ幼稚園
+      .container
+        button.navbar-toggler.navbar-toggler-right[type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation" style=""]
+          span.navbar-toggler-icon
+        #navbar2SupportedContent.collapse.navbar-collapse.text-center.justify-content-between
+          ul.navbar-nav
+            li.nav-item
+              a.nav-link.mx-2[href= static_pages_history_path]
+                | 園の歴史
+            li.nav-item
+              a.nav-link.mx-2[href= static_pages_everyday_path]
+                | 園の生活
+            li.nav-item
+              a.nav-link.mx-2[href= static_pages_support_path]
+                | 子育て支援内容
+            li.nav-item
+              a.nav-link.mx-2[href= static_pages_entry_path]
+                | 入園案内
+            li.nav-item
+              a.nav-link.mx-2[href= static_pages_publicinfo_path]
+                | お知らせ
+            li.nav-item
+              a.nav-link.mx-2[href= static_pages_recruit_path]
+                i.fa.fa-user.fa-fw
+                | リクルート
+            li.nav-item
+              a.nav-link.mx-2[href= static_pages_access_path]
+                | アクセス
+            li.nav-item
+              a.nav-link.mx-2[href="#"]
+                | 問合せ
+          a.btn.btn-default.navbar-btn.btn-success[style="#"]
+            | 在園児保護者ログイン
+
