@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'private_topics/index'
+  get 'private_topics/new'
   root 'static_pages#home'
   get 'static_pages/history'
   get 'static_pages/everyday'
