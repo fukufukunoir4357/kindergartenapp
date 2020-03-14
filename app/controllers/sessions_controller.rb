@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
   
   
   def create
+    binding.pry
     user = User.find_by(name: params[:session][:name])
       if user && user.authenticate(params[:session][:password])
         log_in user

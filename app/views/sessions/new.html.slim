@@ -12,21 +12,18 @@ html
     
     .py-5.bg-success
       .container
-        .row
+        = form_with scope: :session, local: true do |f|
+         .row
           .col-md-12
-            form
               .form-group
-                label
-                  | 保護者氏名
-                input.form-control[type="email" placeholder="純恋　花三郎"]
-                small.form-text.text-muted
-                  | We'll never share your email with anyone else.
+                =f.label :name, '保護者氏名'
+                =f.text_field :name, class: 'form-control'
+                
               .form-group
-                label
-                  | Password
-                input.form-control[type="password" placeholder="各ご家庭に配布されたパスワードを入力してください"]
-              button.btn.btn-secondary[type="submit"]
-                | ログインする
+                =f.label :password, 'password'
+                =f.text_field :password, class: 'form-control'
+              .form-group
+                =f.submit "ログイン", class: 'button btn btn-secondary'
     .py-3
       .container
         .row
