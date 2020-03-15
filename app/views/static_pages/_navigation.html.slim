@@ -35,6 +35,8 @@
             li.nav-item
               a.nav-link.mx-2[href="#"]
                 | 問合せ
-          a.btn.btn-default.navbar-btn.btn-success[href= login_path]
-            | 在園児保護者ログイン
-
+          -if logged_in?
+           = link_to 'ログイン', login_path, class: 'btn btn-default navbar-btn btn-success'
+             
+          -else
+           = link_to 'ログアウト', logout_path, method: :delete, class: 'btn btn-default navbar-btn btn-danger'
