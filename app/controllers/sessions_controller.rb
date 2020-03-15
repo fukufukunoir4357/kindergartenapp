@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     user = User.find_by(name: params[:session][:name])
       if user && user.authenticate(params[:session][:password])
         log_in user
-        redirect_to user
+        redirect_to private_topics_index_path
       else
         flash.now[:danger] = 'ユーザー名またはパスワードが一致しません'
         render 'new'
@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
   
   def destroy
      log_out
-   　redirect_to login_url
+     redirect_to root_path
   end
   
   
