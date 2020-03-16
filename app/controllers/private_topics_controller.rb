@@ -11,6 +11,10 @@ class PrivateTopicsController < ApplicationController
     @private_topic = PrivateTopic.new
   end
   
+  def show
+    @private_topic = PrivateTopic.find(params[:id])
+  end
+  
   def create  #お知らせ新規投稿
     @private_topic = PrivateTopic.new(topic_params)
     

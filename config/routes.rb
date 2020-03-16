@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
   get 'private_topics/index'
   get 'private_topics/new'
+  get 'private_topics/show/:id', to:'private_topics#show', as: 'private_topics_show'
   post 'private_topics/create'
   root 'static_pages#home'
   get 'static_pages/history'

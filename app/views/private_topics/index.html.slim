@@ -30,7 +30,7 @@ html
           -@private_topics.each do |topic| 
            ul
             li.text-body
-              a href="#" #{topic.title}
+              a [href=private_topics_show_path(topic.id)] #{topic.title} 
             
   .py-5.text-center[style="	background-image: url(/camera.jpg);	background-position: top left;	background-size: 100%;	background-repeat: repeat;"]
     .container
