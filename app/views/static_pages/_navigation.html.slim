@@ -35,8 +35,8 @@
             li.nav-item
               a.nav-link.mx-2[href="#"]
                 | 問合せ
-          -if logged_in?
+          - if logged_in?
            = link_to 'ログアウト', logout_path, method: :delete, class: 'btn btn-default navbar-btn btn-danger'
              
-          -else
+          - else
            = link_to 'ログイン', login_path, class: 'btn btn-default navbar-btn btn-success'

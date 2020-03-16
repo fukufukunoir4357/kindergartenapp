@@ -1,2 +1,48 @@
-h1 PrivateTopics#new
-p Find me in app/views/private_topics/new.html.slim
+doctype html
+html
+  head
+    meta[charset="utf-8"]
+    meta[name="viewport" content="width=device-width, initial-scale=1"]
+    link[rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"]
+    link[rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css"]
+  body
+    
+    ==render 'static_pages/navigation'
+    
+    
+    .py-3.text-center.bg-success[style=""]
+      .container
+        .row
+          .mx-auto.p-4.col-md-7
+            h1.mb-4
+              | 在園児向けお知らせ投稿ページ
+            =form_with(model: @private_topic, url: private_topics_create_path, local: true) do |f|
+              .form-group
+               =f.label :title, 'お知らせのタイトル'
+               br
+               =f.text_field :title, class: 'form-control type="text" placeholder="タイトル　2020.4.1"'
+              .form-group
+               =f.label :content, 'お知らせ内容'
+               br
+               =f.text_area :content, class:'form-control form-control-lg[rows="3" placeholder="お知らせ内容"]'
+               br
+               =f.submit '投稿する', class: 'button btn btn-outline-primary btn-block text-body[type="submit"]'
+                b
+            a.btn.btn-secondary[href="#"]
+              | 管理者メニューに戻る
+    .py-3
+      .container
+        .row
+          .col-md-12.text-center.d-md-flex.justify-content-between.align-items-center
+            ul.nav.d-flex.justify-content-center
+              li.nav-item
+                a.nav-link.active[href="#"]
+                  | Topへ戻る
+            p.mb-0.py-1
+              | © 2014-2018 Pingendo. All rights reserved
+    script[src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"]
+    script[src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"]
+    script[src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"]
+    pingendo[onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white"]
+      | Made with Pingendo Free  
+      img.d-block[src="https://pingendo.com/site-assets/Pingendo_logo_big.png" alt="Pingendo logo" height="16"]
