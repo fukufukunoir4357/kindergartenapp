@@ -24,15 +24,25 @@ html
                 .card-text.bg-light 
                  p #{simple_format(h(@private_topic.content.gsub(/ /, '&nbsp;')), {}, sanitize: false)}
                  
-            .row
-              .col-md-6
-                a.btn.text-white[href="#" style="background: rgb(229, 45, 39);" target="_blank"]
-                  i.fa.fa-user.fa-fw
-                  | 確認しました！
-              .col-md-6
-                a.btn.btn-primary[href="#"]
-                  i.fa.fa-download.fa-fw
-                  |  添付資料ダウンロード
+            .row.justify-content-center
+                .col-md-five-1
+                  a.btn.text-white[href="#" style="background: rgb(229, 45, 39);" target="_blank"]
+                    i.fa.fa-user.fa-fw
+                    | 確認しました！
+                .col-md-five-1
+                  a.btn.btn-primary[href="#"]
+                    i.fa.fa-download.fa-fw
+                    |  添付資料ダウンロード
+                -if current_user.admin?
+                  .col-md-five-1
+                    a.btn.btn-primary[href="#"]
+                      |編集する
+                  .col-md-five-1
+                    a.btn.btn-primary[href="#"]
+                      |削除する
+                  .col-md-five-1
+                    a.btn.btn-primary[href="#"]
+                      |管理者メニューに戻る
     .py-3.bg-light
       .container
         .row
