@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'admin_menue/index'
+  end
   get 'private_topics/index'
   get 'private_topics/new'
   post 'private_topics/create'

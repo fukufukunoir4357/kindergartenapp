@@ -1,0 +1,2 @@
+module Admin::AdminMenueHelper
+end
