@@ -1,13 +1,9 @@
 class ContactMailer < ApplicationMailer
-
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.contact_mailer.contact_mail.subject
-  #
-  def contact_mail
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  
+  def send_when_admin_reply(user, contact)
+    @user = user
+    @answer = contact.reply_text
+    mail to: user.email, subject: '【八王子すみれ幼稚園】お問い合わせありがとうございます'
   end
+  
 end

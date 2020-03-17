@@ -33,7 +33,7 @@
               a.nav-link.mx-2[href= static_pages_access_path]
                 | アクセス
             li.nav-item
-              a.nav-link.mx-2[href="#"]
+              a.nav-link.mx-2[href= contacts_new_path]
                 | 問合せ
           - if logged_in?
            = link_to 'ログアウト', logout_path, method: :delete, class: 'btn btn-default navbar-btn btn-danger'
