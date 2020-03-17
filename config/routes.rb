@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   get 'public_topics/index'
   get 'public_topics/new'
-  get 'public_topics/show'
-  get 'public_topics/edit'
+  get 'public_topics/show/:id', to: 'public_topics#show', as: 'public_topics_show'
+  post 'public_topics/create'
+  get 'public_topics/:id/edit', to: 'public_topics#edit', as: 'public_topics_edit'
+  patch 'public_topics/:id/update', to: 'public_topics#update', as: 'public_topics_update'
+  get 'public_topics/:id/destroy', to: 'public_topics#destroy', as: 'public_topics_destroy'
   namespace :admin do
     get 'admin_menue/index'
   end
@@ -18,7 +21,6 @@ Rails.application.routes.draw do
   get 'static_pages/everyday'
   get 'static_pages/support'
   get 'static_pages/entry'
-  get 'static_pages/publicinfo'
   get 'static_pages/recruit'
   get 'static_pages/access'
   resources :users

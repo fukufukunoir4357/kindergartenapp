@@ -18,8 +18,6 @@ class StaticPagesController < ApplicationController
   def entry
   end
 
-  def publicinfo
-  end
 
   def recruit
   end

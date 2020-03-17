@@ -15,8 +15,8 @@ html
           .mx-auto.p-4.col-md-7
             h1.mb-4
               b
-                | 在園児向けお知らせ編集ページ
-            =form_with(model: @private_topic, url: private_topics_update_path, local: true) do |f|
+                | 一般向けお知らせ編集ページ
+            =form_with(model: @public_topic, url: private_topics_update_path, local: true) do |f|
               .form-group
                 =f.label :title, "お知らせタイトル"
                 br
@@ -27,11 +27,13 @@ html
               button.btn.btn-outline-primary.btn-block.text-body[type="submit"]
                 b
                   | 記事を更新する
-            a.btn.btn-danger[href="#"]
+            a.btn.btn-info[href= public_topics_index_path]
+              | 記事一覧に戻る
+            a.btn.btn-danger[href= public_topics_new_path]
               | 新規記事作成
-            a.btn.btn-info[href="#"]
+            a.btn.btn-info[href= public_topics_destroy_path]
               | 削除する
-            a.btn.btn-secondary[href="#"]
+            a.btn.btn-secondary[href= admin_admin_menue_index_path]
               | 管理者メニューに戻る
     .py-3
       .container
