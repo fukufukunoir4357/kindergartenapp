@@ -8,6 +8,7 @@ before_action :if_not_login_user
   end
 
   def new     #投稿画面表示
+    @private_topics = PrivateTopic.all 
     @private_topic = PrivateTopic.new
   end
   
