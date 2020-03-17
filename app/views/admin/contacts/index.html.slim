@@ -16,14 +16,14 @@ html
           .col-md-12
             .card
               .card-body
-                h5.card-title #{contact.created_at.strftime('%Y/%m/%d %H:%M')}
+                h5.card-title #{contact.created_at.strftime('%Y年%m月%d日 %H:%M')}
                   
                 h6.card-subtitle.my-2.text-muted #{contact.email}からのメール
                 .card-text.border  
                  p #{simple_format(h(contact.content.gsub(/ /, '&nbsp;')), {}, sanitize: false)}
                   
                  
-                a.btn.btn-secondary[href= edit_user_contact_path(contact.id)]
+                a.btn.btn-secondary[href= edit_admin_contact_path(contact.id)]
                   | 返信を書く
                 a.btn.btn-info[href= admin_admin_menue_index_path]
                   | 管理者メニューに戻る

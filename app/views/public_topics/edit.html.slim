@@ -16,7 +16,7 @@ html
             h1.mb-4
               b
                 | 一般向けお知らせ編集ページ
-            =form_with(model: @public_topic, url: private_topics_update_path, local: true) do |f|
+            =form_with(model: @public_topic, url: public_topics_update_path, local: true) do |f|
               .form-group
                 =f.label :title, "お知らせタイトル"
                 br
@@ -24,9 +24,8 @@ html
               .form-group
                 =f.label :content, "お知らせ内容"
                 =f.text_area :content, class: 'form-control form-control-lg[rows="3" placeholder="お知らせ内容"]'
-              button.btn.btn-outline-primary.btn-block.text-body[type="submit"]
-                b
-                  | 記事を更新する
+                =f.submit '記事を更新する', class: 'button btn btn-outline-primary btn-block text-body[type="submit"]'
+                
             a.btn.btn-info[href= public_topics_index_path]
               | 記事一覧に戻る
             a.btn.btn-danger[href= public_topics_new_path]

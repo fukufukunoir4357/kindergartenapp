@@ -42,7 +42,7 @@ html
             -@public_topics.each do |topic| 
              ul
               li.text-body
-                a [href=private_topics_show_path(topic.id)] #{topic.title}
+                a [href=public_topics_edit_path(topic.id)] #{topic.title}
     .py-3       
       .container
         .row

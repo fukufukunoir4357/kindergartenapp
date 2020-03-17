@@ -29,7 +29,7 @@ class PublicTopicsController < ApplicationController
   def update
     @public_topic = PublicTopic.find(params[:id])
     @public_topic.update(topic_params)
-    redirect_to public_topics_show_path(@public_topic.id)
+    redirect_to public_topics_index_path(@public_topic.id)
   end
   
   def destroy
