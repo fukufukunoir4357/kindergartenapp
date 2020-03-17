@@ -24,7 +24,7 @@ html
               | 予めご了承ください。
               br
             .form
-             =form_with(model: @contact, url: contacts_new_path, local: true) do |f|
+             =form_with(model: @contact, url: user_contacts_path, local: true) do |f|
               .form-group
                =f.label :email
                br
@@ -33,9 +33,9 @@ html
               .form-group
                =f.label :content
                br
-               =f.text_area :'お問い合わせ内容', class: 'form-control form-control-lg[rows="3" placeholder="お問い合わせ内容※"]'
+               =f.text_area :content, class: 'form-control form-control-lg[rows="3" placeholder="お問い合わせ内容※"]'
                br
-               =f.submit "お問い合わせを送信する", class:'button btn btn-primary[type="submit"]'
+               =f.submit "お問い合わせを送信する", class:'button btn btn-primary'
                 
             h6.text-danger
               | ※全ての欄の入力が必須です。

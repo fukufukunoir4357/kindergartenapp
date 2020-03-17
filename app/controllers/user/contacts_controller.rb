@@ -1,4 +1,4 @@
-class Users::ContactsController < ApplicationController
+class User::ContactsController < ApplicationController
   
   def new
       @contact = Contact.new

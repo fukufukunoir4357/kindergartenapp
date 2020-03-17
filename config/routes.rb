@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  get 'contacts/new'
-  get 'contacts/create'
+  namespace :admin do
+    resources :contacts
+  end
+  
+  namespace :user do
+    resources :contacts
+  end
+  
   get 'public_topics/index'
   get 'public_topics/new'
   post 'public_topics/create'
