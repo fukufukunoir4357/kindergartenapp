@@ -1,0 +1,64 @@
+doctype html
+html
+  head
+    meta[charset="utf-8"]
+    meta[name="viewport" content="width=device-width, initial-scale=1"]
+    link[rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"]
+    link[rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css"]
+  body
+    
+  ==render 'static_pages/navigation'
+  
+  .py-5.bg-primary
+    .container
+      .row
+        .px-5.col-md-8.text-center.mx-auto
+          h3.display-4.bg-primary.text-body[style=""]
+            b
+              | 在園児保護者専用ページ
+          h2.my-3
+            | 在園児向けのお知らせや幼稚園で撮影された写真を購入する事ができます。
+          p.mb-3
+            | ※このページにログインする為のパスワードはご家庭以外に流出しないようにご注意ください。万が一流出の可能性があった際は速やかにパスワードの再発行を行ってください。
+  .py-5.bg-warning
+    .container
+      .row
+        .col-md-12.border.border-dark[style=""]
+          h1.text-center
+            b
+              | お知らせ一覧
+          -@private_topics.each do |topic| 
+           ul
+            li.text-body
+              a [href=private_topics_show_path(topic.id)] #{topic.title} 
+            
+  .py-5.text-center[style="	background-image: url(/camera.jpg);	background-position: top left;	background-size: 100%;	background-repeat: repeat;"]
+    .container
+      .row
+        .bg-white.p-5.mx-auto.col-md-8.col-10
+          h3.display-3
+            | 行事写真購入
+          p.mb-4
+            | 園の行事写真等を購入する事ができます、
+            br
+            | 購入した写真は出来上がり次第園児経由で各ご家庭に配布致します。
+            br
+            | 料金のお支払いはご登録頂いている多摩信用金庫の口座引き落としとなります。
+          a.btn.btn-outline-primary[href="#"]
+            | 写真購入ページへ進む
+  .py-3
+    .container
+      .row
+        .col-md-12.text-center.d-md-flex.justify-content-between.align-items-center
+          ul.nav.d-flex.justify-content-center
+            li.nav-item
+              a.nav-link.active[href="#"]
+                | Topへ戻る
+          p.mb-0.py-1
+              | © 2014-2018 Pingendo. All rights reserved
+    script[src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"]
+    script[src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"]
+    script[src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"]
+    pingendo[onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white"]
+      | Made with Pingendo Free  
+      img.d-block[src="https://pingendo.com/site-assets/Pingendo_logo_big.png" alt="Pingendo logo" height="16"]

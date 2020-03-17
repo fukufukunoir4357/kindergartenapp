@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'public_topics/index'
+  get 'public_topics/new'
+  get 'public_topics/show'
+  get 'public_topics/edit'
   namespace :admin do
     get 'admin_menue/index'
   end

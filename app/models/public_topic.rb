@@ -1,0 +1,2 @@
+class PublicTopic < ApplicationRecord
+end
