@@ -18,4 +18,9 @@ module SessionsHelper
     @current_user = nil
   end
   
+  
+  def if_not_login_user
+    redirect_to root_path unless current_user.present?
+  end
+  
 end

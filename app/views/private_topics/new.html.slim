@@ -20,7 +20,7 @@ html
               .form-group
                =f.label :title, 'お知らせのタイトル'
                br
-               =f.text_field :title, class: 'form-control[ type="text" placeholder="タイトル　2020.4.1"]'
+               =f.text_field :title, class: 'form-control'
               .form-group
                =f.label :content, 'お知らせ内容'
                br
@@ -28,7 +28,7 @@ html
                br
                =f.submit '投稿する', class: 'button btn btn-outline-primary btn-block text-body[type="submit"]'
                 b
-            a.btn.btn-secondary[href="#"]
+            a.btn.btn-secondary[href= admin_admin_menue_index_path]
               | 管理者メニューに戻る
     .py-3
       .container
