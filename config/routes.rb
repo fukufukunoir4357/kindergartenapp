@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  get 'contacts/new'
+  get 'contacts/create'
   get 'public_topics/index'
   get 'public_topics/new'
-  get 'public_topics/show/:id', to: 'public_topics#show', as: 'public_topics_show'
   post 'public_topics/create'
   get 'public_topics/:id/edit', to: 'public_topics#edit', as: 'public_topics_edit'
   patch 'public_topics/:id/update', to: 'public_topics#update', as: 'public_topics_update'

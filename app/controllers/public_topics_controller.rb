@@ -10,9 +10,6 @@ class PublicTopicsController < ApplicationController
     @public_topic = PublicTopic.new
   end
 
-  def show
-    @public_topic = PublicTopic.find(params[:id])
-  end
   
   def create
     @public_topic = PublicTopic.new(topic_params)
