@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'private_topics/new'
   get 'private_topics/show/:id', to:'private_topics#show', as: 'private_topics_show'
   post 'private_topics/create'
+  get 'private_topics/:id/edit', to: 'private_topics#edit', as: 'private_topics_edit'
+  patch 'private_topics/:id/update', to: 'private_topics#update', as: 'private_topics_update'
   root 'static_pages#home'
   get 'static_pages/history'
   get 'static_pages/everyday'

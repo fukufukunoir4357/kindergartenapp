@@ -27,6 +27,14 @@ class PrivateTopicsController < ApplicationController
   
   
   def edit
+    @private_topic = PrivateTopic.find(params[:id])
+  end
+  
+  def update
+    @private_topic = PrivateTopic.find(params[:id])
+    @private_topic.update(params.require(:private_topic).permit(:title, :content))
+    redirect_to private_topics_show_path(@private_topic.id)
+    
   end
   
   def destroy
