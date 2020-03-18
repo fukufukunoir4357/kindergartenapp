@@ -57,6 +57,10 @@ html
                   a.btn.btn-secondary[href="#"]
                     i.fa.fa-download.fa-fw
                     | ダウンロード
+                  -if current_user.admin?
+                  a.btn.btn-danger[href= edit_entry_topic_path(topic.id)]
+                    |この記事を編集する
+                  =link_to 'この記事を削除する',entry_topic_path(topic.id), method: :delete, class:'btn btn-info'
     .py-3
       .container
         .row

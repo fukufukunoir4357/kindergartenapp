@@ -5,12 +5,13 @@ class EntryTopicsController < ApplicationController
 
   def new
       @entry_topic = EntryTopic.new
+      @entry_topics = EntryTopic.all
   end
   
   def create
       @entry_topic = EntryTopic.new(entry_params)
       if @entry_topic.save
-      redirect_to entry_topics_index_path
+      redirect_to entry_topics_path
       else
       flash.now[:danger] = '投稿失敗しました'
       render :new
@@ -24,14 +25,14 @@ class EntryTopicsController < ApplicationController
   def update
       @entry_topic = EntryTopic.find(params[:id])
       @entry_topic.update(entry_params)
-      redirect_to entry_topics_index_path
+      redirect_to entry_topics_path
   end
   
   def destroy
       @entry_topic = EntryTopic.find(params[:id])
       @entry_topic.destroy
       flash.now[:success] = '記事を削除しました'
-      redirect_to entry_topics_index_path
+      redirect_to entry_topics_path
   end
 
 private

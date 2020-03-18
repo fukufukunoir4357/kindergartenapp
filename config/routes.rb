@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'entry_topics/index'
-  get 'entry_topics/new'
-  get 'entry_topics/edit'
+  resources :entry_topics, only: [:index, :new, :edit, :create, :update, :destroy]
   namespace :admin do
     resources :contacts
   end
