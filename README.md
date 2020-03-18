@@ -1,24 +1,20 @@
-# README
+幼稚園の先生と保護者の利便性を高める為のWEBアプリケーション。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+現状：連絡事項を園児経由で手渡し、行事の写真は３日間だけ園に貼り出して注文用紙記入。
 
-Things you may want to cover:
+このアプリで解決したい事
 
-* Ruby version
+・連絡事項をログインした保護者専用ページで閲覧できる
+・行事の出欠確認をアプリ上で行う。
+・行事写真の購入をアプリ上で行う。
 
-* System dependencies
+上記を解決する事で
 
-* Configuration
+・先生の印刷して各児童のカバンに紙を入れて、、といった時間削減。
+・写真を何十枚も張り出す先生の時間削減
+・写真が欲しいけど注文期間に園まで行けない保護者も手軽に購入できる。
+・子供が風邪でしばらく休んだら連絡事項を知るのが遅れる点を解決。
+・行事出席の集計の時間削減。
+・写真の購入点数を上げる事で園の副収入を上昇させる。
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+といった事を狙っています。
