@@ -12,7 +12,7 @@ class Admin::ContactsController < ApplicationController
       contact = Contact.find(params[:id])
       contact.update(contact_params)
       ContactMailer.send_when_admin_reply(contact).deliver_now
-      redirect_to :index
+      redirect_to admin_contacts_path
   end
   
   def destroy

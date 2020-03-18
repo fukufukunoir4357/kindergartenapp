@@ -16,7 +16,7 @@ html
             h1.mb-4
              b
               | 返信ページ
-            =form_with(model: @contact, url: edit_admin_contact_path, local: true) do |f|
+            =form_with(model: @contact, url: admin_contact_path(@contact.id), local: true) do |f|
               .form-group.form-control.bg-info
                 p アドレス#{@contact.email}からの問合せです
               .form-group
@@ -26,9 +26,9 @@ html
                 =f.label :reply, '返信内容'
                 =f.text_area :reply, class: 'form-control form-control-lg[rows="3"]', :placeholder => "この欄に返信内容を入力"
                 =f.submit '送信する', class: 'btn btn-block btn-danger'
-            a.btn.btn-secondary[href="#"]
+            a.btn.btn-secondary[href= admin_contacts_path]
               | 問合せ一覧に戻る
-            a.btn.btn-info[href="#"]
+            a.btn.btn-info[href= admin_admin_menue_index_path]
               | 管理者メニューに戻る
     .py-3
       .container
