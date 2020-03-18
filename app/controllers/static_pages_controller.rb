@@ -15,9 +15,6 @@ class StaticPagesController < ApplicationController
   def support
   end
 
-  def entry
-  end
-
 
   def recruit
   end

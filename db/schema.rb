@@ -10,12 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_17_091811) do
+ActiveRecord::Schema.define(version: 2020_03_18_060600) do
 
   create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
     t.text "reply"
     t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "entry_topics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "term"
+    t.string "reception_day"
+    t.text "information"
+    t.string "upload_file_name"
+    t.binary "upload_file"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'entry_topics/index'
+  get 'entry_topics/new'
+  get 'entry_topics/edit'
   namespace :admin do
     resources :contacts
   end
@@ -27,7 +30,6 @@ Rails.application.routes.draw do
   get 'static_pages/history'
   get 'static_pages/everyday'
   get 'static_pages/support'
-  get 'static_pages/entry'
   get 'static_pages/recruit'
   get 'static_pages/access'
   resources :users

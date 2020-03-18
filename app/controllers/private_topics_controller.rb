@@ -20,9 +20,9 @@ before_action :if_not_login_user
     @private_topic = PrivateTopic.new(topic_params)
     
     if @private_topic.save
-      redirect_to private_topics_index_path
+       redirect_to private_topics_index_path
     else
-      flash.now[:danger] = '投稿失敗しました'
+       flash.now[:danger] = '投稿失敗しました'
     end
   end
   

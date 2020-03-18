@@ -7,8 +7,7 @@ html
     link[rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css"]
   body
     
-    ==render 'navigation'
-    
+    ==render 'static_pages/navigation'
     
     .py-5.text-center.text-white.h-100.align-items-center.d-flex[style="	background-image: url(/sakura.jpg);	background-position: center center;	background-size: cover;	background-repeat: repeat;"]
       .container.py-5
@@ -22,37 +21,42 @@ html
             h1.text-body[style=""]
               b
                 | 入園申込について
-        .row
-          .col-md-12.bg-warning
-            .table-responsive
-              table.table.table-bordered
-                thead.thead-dark
-                  tr
-                tbody
-                  tr
-                    th
-                      | 願書配布期間
-                    td
-                      | 10月1日〜15日
-                  tr
-                    th
-                      | 入園受付日
-                    td
-                      | 11月1日
-                  tr
-                    th[scope="row"]
-                      | 園児定員
-                    td[contenteditable="true"]
-                      | ４０人
-        .row
-          .col-md-12.bg-warning
-            h4
-              | ↓資料ダウンロードはコチラ↓
-            .row.bg-warning
-              .col-md-12
-                a.btn.btn-primary[href="#"]
-                  i.fa.fa-download.fa-fw
-                  |  Left icon 
+        - @entry_topics.each do |topic|        
+          .row
+            .col-md-12.bg-warning
+              .table-responsive
+                table.table.table-bordered
+                  thead.thead-dark
+                    tr
+                  tbody
+                    tr
+                      th
+                        | 願書配布期間
+                      td
+                        p #{topic.term}
+                    tr
+                      th
+                        | 入園受付日
+                      td
+                        p #{topic.reception_day}
+                    tr
+                      th[scope="row"]
+                        | 園児定員
+                      td[contenteditable="true"]
+                        | ４０人
+          .row
+            .col-md-12.bg-warning
+              .list-group
+                a.list-group-item.list-group-item-action.flex-column.align-items-start.active[href="#"]
+  
+                 h2 #{topic.information}
+              h4
+                | ↓資料ダウンロードはコチラ↓
+              .row.bg-warning
+                .col-md-12
+                  a.btn.btn-secondary[href="#"]
+                    i.fa.fa-download.fa-fw
+                    | ダウンロード
     .py-3
       .container
         .row
