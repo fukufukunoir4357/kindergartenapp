@@ -35,8 +35,10 @@
             li.nav-item
               a.nav-link.mx-2[href= new_user_contact_path]
                 | 問合せ
-          - if logged_in?
+          - if logged_in? && current_user.admin?
+           = link_to '管理者メニューへ', admin_admin_menue_index_path, class: 'btn btn-default navbar-btn btn-primary'
            = link_to 'ログアウト', logout_path, method: :delete, class: 'btn btn-default navbar-btn btn-danger'
-             
+          -elsif logged_in?
+           = link_to 'ログアウト', logout_path, method: :delete, class: 'btn btn-default navbar-btn btn-danger'
           - else
            = link_to 'ログイン', login_path, class: 'btn btn-default navbar-btn btn-success'
