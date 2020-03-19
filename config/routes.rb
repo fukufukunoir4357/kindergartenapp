@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'public_topics/:id/destroy', to: 'public_topics#destroy', as: 'public_topics_destroy'
   namespace :admin do
     get 'admin_menue/index'
+    get 'admin_menue/user_edit'
   end
   get 'private_topics/index'
   get 'private_topics/new'

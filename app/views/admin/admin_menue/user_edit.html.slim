@@ -9,8 +9,8 @@ html
     
     ==render 'static_pages/navigation'
     
-    .py-5.bg-secondary[style=""]
-      .container
+    .py-5.bg-dark[style=""]
+      .container.text-warning
         .row
           .col-lg-6.px-4.px-md-0
             .row.mb-4
@@ -18,31 +18,31 @@ html
                 img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-1.svg" width="100" alt="Card image cap"]
               .col-9
                 h4
-                  a[href= private_topics_new_path]
+                  a[href="#"]
                     b
-                      | 在園児向けお知らせ
+                      | ユーザー新規登録
                 p.mb-0
-                  | 投稿・編集・削除
+                  | 新規の保護者登録
             .row.mb-4
               .col-3
                 img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-2.svg" width="100" alt="Card image cap"]
               .col-9
                 h4
-                  b
-                    a[href= public_topics_new_path]
-                      | 一般公開お知らせ
+                  a[href="#"]
+                    b
+                      | 登録ユーザー検索
                 p.mb-0
-                  | 投稿・編集・削除
+                  | 保護者名や園児名で検索できます
             .row.mb-4
               .col-3
                 img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-3.svg" width="100" alt="Card image cap"]
               .col-9
                 h4
                   b
-                    a[href= admin_contacts_path]
-                      | お問い合わせ
+                    a[href="#"]
+                      | ユーザー情報の編集削除
                 p.mb-0
-                  | 確認・返信
+                  | 子供の登録や卒園時の削除ができます
           .col-lg-6.px-4.px-md-0
             .row.mb-4
               .col-3
@@ -51,31 +51,14 @@ html
                 h4
                   b
                     a[href="#"]
-                      | 写真管理
+                      | ユーザーの一括新規登録
                 p.mb-0
-                  | 写真登録・注文確認・CSV出力
-                  br
-            .row.mb-4
-              .col-3
-                img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-3.svg" width="100" alt="Card image cap"]
-              .col-9
-                h4
-                  b
-                    a[href= admin_admin_menue_user_edit_path]
-                      | ユーザー管理
-                p.mb-0
-                  | ユーザー登録・兄弟姉妹登録・卒園削除
-            .row.mb-4
-              .col-3
-                img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-1.svg" width="100" alt="Card image cap"]
-              .col-9
-                h4
-                  b
-                    a[href= new_entry_topic_path]
-                      | 入園案内管理
-                p.mb-0
-                  | 入園案内の更新
-    .py-3
+                  | 4月の入園時はコチラで一括登録
+        .row
+          .col-md-12
+            a.btn.btn-secondary[href= admin_admin_menue_index_path]
+              | 管理者メニューTOPに戻る
+    .py-3.bg-light
       .container
         .row
           .col-md-12.text-center.d-md-flex.justify-content-between.align-items-center
