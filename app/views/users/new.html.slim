@@ -9,46 +9,27 @@ html
     
     ==render 'static_pages/navigation'
     
-    .py-5.bg-dark[style=""]
-      .container.text-warning
+    .py-5.text-center.bg-primary[style=""]
+      .container
         .row
-          .col-lg-6.px-4.px-md-0
-            .row.mb-4
-              .col-3
-                img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-1.svg" width="100" alt="Card image cap"]
-              .col-9
-                h4
-                  a[href= new_user_path]
-                    b
-                      | ユーザー新規登録
-                p.mb-0
-                  | 新規の保護者登録、１件ずつの登録
-            .row.mb-4
-              .col-3
-                img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-2.svg" width="100" alt="Card image cap"]
-              .col-9
-                h4
-                  a[href="#"]
-                    b
-                      | 登録ユーザー検索・編集・削除
-                p.mb-0
-                  | 保護者名や園児名で検索して編集・削除できます
+          .mx-auto.col-md-6.col-10.bg-white.p-5
+            h1.mb-4
+              b
+                | 新規ユーザー登録
+            =form_with(model: @user, url: users_path, local: true) do |f|
+              .form-group
+                =f.text_field :name, class: 'form-control', :placeholder => "保護者氏名※"
+              .form-group.mb-3
+                =f.text_field :password, class: 'form-control', :placeholder=> "Password※"
+              .form-group.mb-3
+                =f.text_field :password_confirmation, class: 'form-control', :placeholder=> "Passwordの確認の為再度入力してください※"
+              .form-group.mb-3
+                =f.text_field :firstchild, class: 'form-control', :placeholder=> "第１子の名前※"
+                br
+                 |第２子以降はユーザー情報編集画面より操作してください
+                br
+                =f.submit '登録する', class: 'button btn btn-primary'
 
-          .col-lg-6.px-4.px-md-0
-            .row.mb-4
-              .col-3
-                img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-2.svg" width="100" alt="Card image cap"]
-              .col-9
-                h4
-                  b
-                    a[href="#"]
-                      | ユーザーの一括新規登録
-                p.mb-0
-                  | 4月の入園時はコチラで一括登録
-        .row
-          .col-md-12
-            a.btn.btn-secondary[href= admin_admin_menue_index_path]
-              | 管理者メニューTOPに戻る
     .py-3.bg-light
       .container
         .row
