@@ -10,6 +10,11 @@ class Admin::AdminMenueController < ApplicationController
   def user_edit
   end
   
+  #ユーザー一覧・検索ページ
+  def users_index
+   @users = User.all
+  end
+  
   #ユーザー一括登録画面表示
   def import_form
   end

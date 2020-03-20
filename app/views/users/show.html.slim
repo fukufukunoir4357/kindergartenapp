@@ -38,7 +38,7 @@ html
               b
                 | email
           .col-md-9
-              =f.text_field :email, class: 'form-control text-center.pt-2'
+              =f.text_field :email, class: 'form-control text-center pt-2'
                  
         .row
           .col-md-3.text-center.pt-2.border.border-dark.bg-secondary
@@ -65,17 +65,17 @@ html
         
         .row.justify-content-center
           .col-md-four-1
-            a.btn.btn-info[href="#"]
+            a.btn.btn-info[href= admin_admin_menue_users_index_path]
               | ユーザー一覧へ
               br
           .col-md-four-1
             =f.submit 'ユーザー情報を更新する',class: 'btn btn-danger'
           .col-md-four-1
-            a.btn.btn-light[href="#"]
+            a.btn.btn-light[href= admin_admin_menue_index_path]
               | 管理画面TOPへ
           .col-md-four-1
-            a.btn.btn-dark[href="#"]
-              | ユーザーを削除する
+            =link_to "ユーザーを削除する", user_path(@user.id), method: :delete, class: 'btn btn-dark'
+              
     .py-3
       .container
         .row

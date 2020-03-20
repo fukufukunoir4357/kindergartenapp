@@ -1,11 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  # GET /users
-  # GET /users.json
-  def index
-      @users = User.all
-  end
 
   # GET /users/1
   # GET /users/1.json
@@ -15,10 +10,6 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
       @user = User.new
-  end
-
-  # GET /users/1/edit
-  def edit
   end
 
   # POST /users
@@ -56,6 +47,7 @@ class UsersController < ApplicationController
   #ユーザー一括登録処理
   def import
       User.import(params[:file])
+      flash.now[:success] = '登録成功しました。ユーザー一覧でご確認ください'
       redirect_to admin_admin_menue_user_edit_path
   end
   
@@ -64,10 +56,7 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
       @user.destroy
-      respond_to do |format|
-        format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-        format.json { head :no_content }
-      end
+      redirect_to admin_admin_menue_users_index_path, notice: 'User was successfully destroyed.'
   end
 
 

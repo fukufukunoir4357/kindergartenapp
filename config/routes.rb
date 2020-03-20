@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     get 'admin_menue/index'
     get 'admin_menue/user_edit'
     get 'admin_menue/import_form'
+    get 'admin_menue/users_index'
   end
   get 'private_topics/index'
   get 'private_topics/new'

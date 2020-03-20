@@ -9,46 +9,50 @@ html
     
     ==render 'static_pages/navigation'
     
-    .py-5.bg-dark[style=""]
-      .container.text-warning
-        .row
-          .col-lg-6.px-4.px-md-0
-            .row.mb-4
-              .col-3
-                img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-1.svg" width="100" alt="Card image cap"]
-              .col-9
-                h4
-                  a[href= new_user_path]
-                    b
-                      | ユーザー新規登録
-                p.mb-0
-                  | 新規の保護者登録、１件ずつの登録
-            .row.mb-4
-              .col-3
-                img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-2.svg" width="100" alt="Card image cap"]
-              .col-9
-                h4
-                  a[href= admin_admin_menue_users_index_path]
-                    b
-                      | 登録ユーザー検索・編集・削除
-                p.mb-0
-                  | 保護者名や園児名で検索して編集・削除できます
-
-          .col-lg-6.px-4.px-md-0
-            .row.mb-4
-              .col-3
-                img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-2.svg" width="100" alt="Card image cap"]
-              .col-9
-                h4
-                  b
-                    a[href= admin_admin_menue_import_form_path]
-                      | ユーザーの一括新規登録
-                p.mb-0
-                  | 4月の入園時はコチラで一括登録
+    .py-5.bg-secondary
+      .container
         .row
           .col-md-12
-            a.btn.btn-secondary[href= admin_admin_menue_index_path]
-              | 管理者メニューTOPに戻る
+            .list-group.bg-primary
+
+              h1.display-4
+                b
+                  | 登録ユーザー一覧
+              form.form-inline
+                .input-group
+                  input#inlineFormInputGroup.form-control[type="text" placeholder="Search"]
+                  .input-group-append
+                    button.btn.btn-info[type="button"]
+                      i.fa.fa-search
+              
+              .list-group-item.list-group-item-action
+                -@users.each do |f|
+                 a [href= user_path(f.id)]
+                  p #{f.name}
+                
+        .row
+          .col-md-12
+            ul.pagination
+              li.page-item
+                a.page-link[href="#"]
+                  span
+                    | «
+              li.page-item.active
+                a.page-link[href="#"]
+                  | 1
+              li.page-item
+                a.page-link[href="#"]
+                  | 2
+              li.page-item
+                a.page-link[href="#"]
+                  | 3
+              li.page-item
+                a.page-link[href="#"]
+                  | 4
+              li.page-item
+                a.page-link[href="#"]
+                  span
+                    | »
     .py-3.bg-light
       .container
         .row
