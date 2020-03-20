@@ -51,6 +51,15 @@ class UsersController < ApplicationController
       end
   end
 
+
+  
+  #ユーザー一括登録処理
+  def import
+      User.import(params[:file])
+      redirect_to admin_admin_menue_user_edit_path
+  end
+  
+  
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
@@ -60,6 +69,8 @@ class UsersController < ApplicationController
         format.json { head :no_content }
       end
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

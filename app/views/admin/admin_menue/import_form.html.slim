@@ -9,47 +9,22 @@ html
     
     ==render 'static_pages/navigation'
     
-    .py-5.bg-dark[style=""]
-      .container.text-warning
+    .py-5.text-center.bg-success
+      .container
         .row
-          .col-lg-6.px-4.px-md-0
-            .row.mb-4
-              .col-3
-                img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-1.svg" width="100" alt="Card image cap"]
-              .col-9
-                h4
-                  a[href= new_user_path]
-                    b
-                      | ユーザー新規登録
-                p.mb-0
-                  | 新規の保護者登録、１件ずつの登録
-            .row.mb-4
-              .col-3
-                img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-2.svg" width="100" alt="Card image cap"]
-              .col-9
-                h4
-                  a[href= users_path]
-                    b
-                      | 登録ユーザー検索・編集・削除
-                p.mb-0
-                  | 保護者名や園児名で検索して編集・削除できます
-
-          .col-lg-6.px-4.px-md-0
-            .row.mb-4
-              .col-3
-                img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-2.svg" width="100" alt="Card image cap"]
-              .col-9
-                h4
-                  b
-                    a[href= admin_admin_menue_import_form_path]
-                      | ユーザーの一括新規登録
-                p.mb-0
-                  | 4月の入園時はコチラで一括登録
-        .row
-          .col-md-12
-            a.btn.btn-secondary[href= admin_admin_menue_index_path]
-              | 管理者メニューTOPに戻る
-    .py-3.bg-light
+          .mx-auto.col-lg-6
+            h1
+              b
+                | CSVファイルを読み込んで
+                br
+                | ユーザーの一括登録ができます
+            p.mb-4
+              | 4月入園時はコチラの一括登録が便利です
+            .form-inline.d-flex.justify-content-center
+             =form_with url: import_users_path, multipart: true do
+                =file_field_tag :file, class: 'form-control form-control-lg'
+                =submit_tag 'ファイル読み込み登録', class: 'button btn btn-danger'
+    .py-3
       .container
         .row
           .col-md-12.text-center.d-md-flex.justify-content-between.align-items-center

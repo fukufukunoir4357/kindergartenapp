@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'admin_menue/index'
     get 'admin_menue/user_edit'
+    get 'admin_menue/import_form'
   end
   get 'private_topics/index'
   get 'private_topics/new'
@@ -31,7 +32,11 @@ Rails.application.routes.draw do
   get 'static_pages/support'
   get 'static_pages/recruit'
   get 'static_pages/access'
-  resources :users
+  
+  resources :users do
+    collection {post :import}
+  end
+  
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'

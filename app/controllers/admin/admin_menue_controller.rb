@@ -10,8 +10,9 @@ class Admin::AdminMenueController < ApplicationController
   def user_edit
   end
   
-  
-  
+  #ユーザー一括登録画面表示
+  def import_form
+  end
   
   
   
