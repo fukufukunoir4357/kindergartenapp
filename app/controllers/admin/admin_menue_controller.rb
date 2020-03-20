@@ -12,14 +12,17 @@ class Admin::AdminMenueController < ApplicationController
   
   #ユーザー一覧・検索ページ
   def users_index
-   @users = User.all
+      @users = User.all
   end
   
   #ユーザー一括登録画面表示
   def import_form
   end
   
-  
+  #ユーザー検索
+  def search
+      @searched_users = User.search(params[:search])
+  end   
   
   
   

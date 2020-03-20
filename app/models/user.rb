@@ -18,9 +18,19 @@ class User < ApplicationRecord
       user.save!
     end
   end
-        
+  #登録するカラム許可      
   def self.updatable_attributes
     [ 'name', 'firstchild','password', 'password_confirmation']
+  end
+  
+  
+  #ユーザー検索
+  def self.search(search)
+    if search
+      User.where(['name LIKE ?', "%#{search}%"])
+    else
+      User.all
+    end
   end
   
   

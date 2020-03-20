@@ -29,33 +29,14 @@ html
               
               
               .list-group-item.list-group-item-action
-                -@users.each do |f|
+                -@searched_users.each do |f|
                  a [href= user_path(f.id)]
                   p #{f.name}
                 
         .row
           .col-md-12
-            ul.pagination
-              li.page-item
-                a.page-link[href="#"]
-                  span
-                    | «
-              li.page-item.active
-                a.page-link[href="#"]
-                  | 1
-              li.page-item
-                a.page-link[href="#"]
-                  | 2
-              li.page-item
-                a.page-link[href="#"]
-                  | 3
-              li.page-item
-                a.page-link[href="#"]
-                  | 4
-              li.page-item
-                a.page-link[href="#"]
-                  span
-                    | »
+           a.btn.btn-info[href= admin_admin_menue_users_index_path]
+              | ユーザー一覧へ
     .py-3.bg-light
       .container
         .row
