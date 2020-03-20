@@ -14,68 +14,62 @@ html
         .row
           .col-md-12
             h1.display-4.text-center.text-light
-              b
-                | ユーザー情報の編集・削除ができます
+                | 登録したユーザーの
+                br
+                | 情報編集・削除ができます
+        .row
+          .col-md-12
+            h5.text-center.text-light
+                | ※空欄は情報未登録です
+            
       .container
+       =form_with(model: @user, url: user_path, method: :patch, local: true) do |f|
         .row
           .col-md-3.text-center.pt-2.border.border-dark.bg-secondary
             h4.text-center
               b
                 | 保護者氏名
-          .border.border-dark.col-md-9
-            h3.text-center.pt-2
-              p #{@user.name}
+          .col-md-9
+              =f.text_field :name, class: 'form-control text-center pt-2'
               
         .row
           .col-md-3.text-center.pt-2.border.border-dark.bg-secondary
             h4.text-center
               b
                 | email
-          .border.border-dark.col-md-9
-            h3.text-center.pt-2
-              if @user.email == nil
-                 p 未登録
-              else
-                 p #{@user.email}
+          .col-md-9
+              =f.text_field :email, class: 'form-control text-center.pt-2'
+                 
         .row
           .col-md-3.text-center.pt-2.border.border-dark.bg-secondary
             h4.text-center
               b
                 | 第１子
-          .border.border-dark.col-md-9
-            h3.text-center.pt-2
-              p #{@user.firstchild}
+          .col-md-9
+              =f.text_field :firstchild, class: 'form-control text-center pt-2'
         .row
           .col-md-3.text-center.pt-2.border.border-dark.bg-secondary
             h4.text-center
               b
                 | 第２子
-          .border.border-dark.col-md-9
-            h3.text-center.pt-2
-              if @user.secondchild == nil
-                p 未登録
-              else
-                p #{@user.secondchild}
+          .col-md-9
+              =f.text_field :secondchild, class: 'form-control text-center pt-2'
         .row
           .col-md-3.text-center.pt-2.border.border-dark.bg-secondary
             h4.text-center
               b
                 | 第３子
-          .border.border-dark.col-md-9
-            h3.text-center.pt-2
-              if @user.thirdchild == nil
-                p 未登録
-              else
-                p #{@user.thirdchild}
-         
+          .col-md-9
+              =f.text_field :thirdchild, class: 'form-control text-center pt-2'
+        
+        
         .row.justify-content-center
           .col-md-four-1
             a.btn.btn-info[href="#"]
               | ユーザー一覧へ
               br
           .col-md-four-1
-            a.btn.btn-danger[href="#"]
-              | ユーザー情報を更新
+            =f.submit 'ユーザー情報を更新する',class: 'btn btn-danger'
           .col-md-four-1
             a.btn.btn-light[href="#"]
               | 管理画面TOPへ

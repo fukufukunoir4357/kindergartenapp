@@ -20,19 +20,17 @@ html
               .form-group
                 =f.label :title, "お知らせタイトル"
                 br
-                =f.text_field :title, class: 'form-control[type="text" placeholder="タイトル　2020.4.1"]'
+                =f.text_field :title, class: 'form-control'
               .form-group
                 =f.label :content, "お知らせ内容"
-                =f.text_area :content, class: 'form-control form-control-lg[rows="3" placeholder="お知らせ内容"]'
-              button.btn.btn-outline-primary.btn-block.text-body[type="submit"]
-                b
-                  | 記事を更新する
-            a.btn.btn-danger[href="#"]
+                =f.text_area :content, class: 'form-control form-control-lg[rows="3"]'
+                =f.submit '記事を更新する', class: 'button btn btn-primary btn-block'
+               
+            a.btn.btn-danger[href= private_topics_new_path]
               | 新規記事作成
-            a.btn.btn-info[href="#"]
+            a.btn.btn-info[href= private_topics_destroy_path(@private_topic.id)]
               | 削除する
-            a.btn.btn-secondary[href="#"]
-              | 管理者メニューに戻る
+
     .py-3
       .container
         .row

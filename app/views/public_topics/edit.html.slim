@@ -23,8 +23,8 @@ html
                 =f.text_field :title, class: 'form-control'
               .form-group
                 =f.label :content, "お知らせ内容"
-                =f.text_area :content, class: 'form-control form-control-lg[rows="3" placeholder="お知らせ内容"]'
-                =f.submit '記事を更新する', class: 'button btn btn-outline-primary btn-block text-body[type="submit"]'
+                =f.text_area :content, class: 'form-control form-control-lg[rows="3"]'
+                =f.submit '記事を更新する', class: 'button btn btn-outline-primary btn-block'
                 
             a.btn.btn-info[href= public_topics_index_path]
               | 記事一覧に戻る
