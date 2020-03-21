@@ -18,3 +18,5 @@
 ・写真の購入点数を上げる事で園の副収入を上昇させる。
 
 といった事を狙っています。
+
+https://user-images.githubusercontent.com/57930610/77220850-a6b72980-6b87-11ea-994f-0f5ce24325b3.jpg
