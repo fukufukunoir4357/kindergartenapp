@@ -19,4 +19,4 @@
 
 といった事を狙っています。
 
-https://user-images.githubusercontent.com/57930610/77220850-a6b72980-6b87-11ea-994f-0f5ce24325b3.jpg
+![ページ遷移設計図](https://user-images.githubusercontent.com/57930610/77220924-4379c700-6b88-11ea-805a-6c1f99f6ca38.jpg)
