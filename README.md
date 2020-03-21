@@ -20,3 +20,5 @@
 といった事を狙っています。
 
 ![ページ遷移設計図](https://user-images.githubusercontent.com/57930610/77220924-4379c700-6b88-11ea-805a-6c1f99f6ca38.jpg)
+![DB　ER図](https://user-images.githubusercontent.com/57930610/77220991-ef231700-6b88-11ea-9dd1-424c8c540797.jpg)
+![コントローラ設計](https://user-images.githubusercontent.com/57930610/77220997-f518f800-6b88-11ea-8011-d5988e7974c8.jpg)
