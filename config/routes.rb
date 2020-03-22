@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :photos, only: [:index, :create, :new]
-  end
+  resources :articles
  
   resources :entry_topics, only: [:index, :new, :edit, :create, :update, :destroy]
   

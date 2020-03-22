@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @article.title
+p
+  strong Description:
+  = @article.description
+  
+-unless @article.pictures.empty?
+  p 画像です
+  ul
+   -@article.pictures.each do |pic|
+    | <li id="picture_
+    =pic.id
+    |">
+    =image_tag pic.image.url
+
+=> link_to 'Edit', edit_article_path(@article)
+'|
+=< link_to 'Back', articles_path
