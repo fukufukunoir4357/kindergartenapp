@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  resources :photos, only: [:index, :create, :new]
+  end
+ 
   resources :entry_topics, only: [:index, :new, :edit, :create, :update, :destroy]
+  
   namespace :admin do
     resources :contacts
   end
