@@ -28,6 +28,12 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
+        
+        if params[:images]
+           params[:images].each {|image|
+            @article.pictures.create(image: image)
+            }
+        end
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
         format.json { render :show, status: :created, location: @article }
       else
@@ -42,6 +48,16 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
+        if params[:images]
+          Article.find(params[:id]).pictures.each do |iamge|
+            image.destroy
+          end
+          
+          params[:images].each {|image|
+            @article.pictures.create(image: image)
+          }
+        end
+        
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
       else
@@ -69,6 +85,6 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :description)
+      params.require(:article).permit(:title, :description, :pictures)
     end
 end
