@@ -12,69 +12,46 @@ html
     .py-5.bg-secondary[style=""]
       .container
         .row
-          .col-lg-6.px-4.px-md-0
+          .col-md-12
+            h1.display-4.text-center
+              b
+                | 写真管理メニュー
+        .row
+          .col-lg-4.px-4.px-md-0
             .row.mb-4
               .col-3
                 img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-1.svg" width="100" alt="Card image cap"]
               .col-9
                 h4
-                  a[href= private_topics_new_path]
-                    b
-                      | 在園児向けお知らせ
-                p.mb-0
-                  | 投稿・編集・削除
-            .row.mb-4
-              .col-3
-                img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-2.svg" width="100" alt="Card image cap"]
-              .col-9
-                h4
                   b
-                    a[href= public_topics_new_path]
-                      | 一般公開お知らせ
-                p.mb-0
-                  | 投稿・編集・削除
-            .row.mb-4
-              .col-3
-                img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-3.svg" width="100" alt="Card image cap"]
-              .col-9
-                h4
-                  b
-                    a[href= admin_contacts_path]
-                      | お問い合わせ
-                p.mb-0
-                  | 確認・返信
-          .col-lg-6.px-4.px-md-0
-            .row.mb-4
-              .col-3
-                img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-2.svg" width="100" alt="Card image cap"]
-              .col-9
-                h4
-                  b
-                    a[href= admin_admin_menue_article_menue_path]
-                      | 写真管理
-                p.mb-0
-                  | 写真登録・注文確認・CSV出力
+                    a[href= new_article_path]
+                      | 写真投稿
+                p.mb-0.text-white
+                  | 簡単なコメントと共に写真の
                   br
+                  | アップロードができます。
+          .col-lg-4.px-4.px-md-0
+            .row.mb-4
+              .col-3
+                img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-2.svg" width="100" alt="Card image cap"]
+              .col-9
+                h4
+                  b
+                    a[href= articles_path]
+                      | 投稿済写真一覧
+                p.mb-0.text-white
+                  | 投稿済写真の一覧と削除ができます。
+          .col-lg-4.px-4.px-md-0
             .row.mb-4
               .col-3
                 img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-3.svg" width="100" alt="Card image cap"]
               .col-9
                 h4
                   b
-                    a[href= admin_admin_menue_user_edit_path]
-                      | ユーザー管理
-                p.mb-0
-                  | ユーザー登録・兄弟姉妹登録・卒園削除
-            .row.mb-4
-              .col-3
-                img.img-fluid.d-block.mx-auto.rounded-circle[src="https://static.pingendo.com/img-placeholder-1.svg" width="100" alt="Card image cap"]
-              .col-9
-                h4
-                  b
-                    a[href= new_entry_topic_path]
-                      | 入園案内管理
-                p.mb-0
-                  | 入園案内の更新
+                    a[href="#"]
+                      | 注文確認
+                p.mb-0.text-white
+                  | 保護者の注文確認、注文書のcsv出力ができます。
     .py-3
       .container
         .row

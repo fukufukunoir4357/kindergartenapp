@@ -24,6 +24,10 @@ class Admin::AdminMenueController < ApplicationController
       @searched_users = User.search(params[:search])
   end   
   
+  #写真管理メニュー表示
+  def article_menue
+  end
+  
   
   
 private

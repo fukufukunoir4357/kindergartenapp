@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     get 'admin_menue/import_form'
     get 'admin_menue/users_index'
     get 'admin_menue/search'
+    get 'admin_menue/article_menue'
   end
   get 'private_topics/index'
   get 'private_topics/new'
