@@ -5,6 +5,8 @@ class User < ApplicationRecord
   validates :firstchild,presence: true, on: :create
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, on: :create
+  has_many :buys
+  has_many :bought_pictures, through: :buys, source: :pictures
   
   
   #CSVファイル読み込み一括登録の処理
