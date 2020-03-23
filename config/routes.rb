@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :articles
+
+  post 'articles/:article_id/:picture_id/buys', to: 'buys#create', as: 'picture_buys'
+  delete 'articles/:article_id/:picture_id/buys', to: 'buys#destroy', as: 'picture_buy'
  
   resources :entry_topics, only: [:index, :new, :edit, :create, :update, :destroy]
   

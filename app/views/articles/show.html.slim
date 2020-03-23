@@ -21,9 +21,14 @@ html
          -@article.pictures.each do |pic|
           .col-lg-3.col-md-3.p-3.text-center
             =image_tag pic.image.url(:medium)
-            a.btn.btn-secondary.active.btn-lg[href="#"]
-              b
-                | 選択
+            .btn-group
+              -if current_user.already_bought?(pic)
+               =button_to '−', picture_buy_path(@article, picture_id: pic), method: :delete, class:'btn btn-danger active btn-lg p-1'
+              .btn.btn-light.p-1  #{pic.buys.count}枚
+              =button_to '＋', picture_buys_path(@article, picture_id: pic), class:'btn btn-secondary active btn-lg p-1'
+              
+           
+              
     .py-3
       .container
         .row

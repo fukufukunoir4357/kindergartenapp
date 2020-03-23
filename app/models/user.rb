@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :buys
   has_many :bought_pictures, through: :buys, source: :pictures
   
+  def already_bought?(picture)
+      self.buys.exists?(picture_id: picture.id)
+  end
+  
   
   #CSVファイル読み込み一括登録の処理
   def self.import(file)
