@@ -1,0 +1,1 @@
+Paperclip::Attachment.default_options[:url] = 'kindergartenappphoto.s3.amazonaws.com'

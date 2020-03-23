@@ -3,9 +3,8 @@ class Picture < ApplicationRecord
   
   has_attached_file :image,
                     :storage => :s3,
-                    :s3_permissions => :public,
                     :s3_credentials => "#{Rails.root}/config/s3.yml",
-                    :path => ":attachment/:id/:style.:extension",
+                    :path => ":photos/:id/:style.:extension",
                     :styles => {
                       :original => '1980*1680>',
                       :square => '100*100#',

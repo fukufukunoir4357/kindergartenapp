@@ -1,6 +1,7 @@
 amazon:
    service: S3
-   access_key_id: <%= Rails.application.credentials.dig(:aws, :ACCESS_KEY) %>
-   secret_access_key: <%= Rails.application.credentials.dig(:aws, :SECRET_ACCESS_KEY) %>
-   region: us-east-1
-   bucket: kindergartenapp
+   access_key_id: <%= Rails.application.credentials.dig(:aws, :ENV['ACCESS_KEY']) %>
+   secret_access_key: <%= Rails.application.credentials.dig(:aws, :ENV['SECRET_ACCESS_KEY']) %>
+   region: ENV['AWS_REGION']
+   bucket: ENV['S3_BUCKET_NAME']
+   s3_host_name: 's3-ap-northeast-1.amazonaws.com'

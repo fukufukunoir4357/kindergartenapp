@@ -30,9 +30,9 @@ class ArticlesController < ApplicationController
       if @article.save
         
         if params[:images]
-           params[:images].each {|image|
+           params[:images].each do |image|
             @article.pictures.create(image: image)
-            }
+           end
         end
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
         format.json { render :show, status: :created, location: @article }

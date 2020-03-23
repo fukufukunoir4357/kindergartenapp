@@ -13,5 +13,6 @@
     = f.label :description
     = f.text_area :description
   .field
-    =file_field_tag "images[]", type: :file, multiple: true
+    =file_field_tag "images[]", type: :file
+    =file_field_tag "images[]", type: :file
   .actions = f.submit
