@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   resources :articles
   
+  get 'buys/index'
   get 'buys/order'
   get 'buys/thanks'
   post 'articles/:article_id/:picture_id/buys', to: 'buys#create', as: 'picture_buys'

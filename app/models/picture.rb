@@ -1,6 +1,6 @@
 class Picture < ApplicationRecord
   belongs_to :article
-  has_many :buys
+  has_many :buys, :dependent => :destroy
   has_many :bought_users, through: :buys, source: :user
   
   has_attached_file :image,

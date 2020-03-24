@@ -1,0 +1,9 @@
+p 注文状況
+-@users.each do |user|
+ p #{user.pictures.map(&:image_file_name).flatten}
+ p #{user.name}
+ p #{user.buys.count}
+ -user.pictures.each do |pic| 
+   p #{pic.image_file_name}
+   -@buys_count = Buy.where(user_id: user.id).where(picture_id: pic.id).count
+   p #{@buys_count}

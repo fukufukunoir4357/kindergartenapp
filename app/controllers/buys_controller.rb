@@ -1,6 +1,12 @@
 class BuysController < ApplicationController
 #写真購入用中間テーブル
-
+  
+  def index
+    @users = User.all
+    @buys = Buy.all
+    @pictures = Picture.all
+  end
+  
   #写真注文数増
   def create
     
@@ -33,8 +39,9 @@ class BuysController < ApplicationController
   def order
       @pictures = current_user.pictures
       @user = current_user
-      
   end
+  
+  
   
   #注文確定後のありがとうページ表示
   def thanks

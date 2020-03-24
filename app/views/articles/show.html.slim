@@ -36,6 +36,10 @@ html
           .col-md-two-1
            a.btn.btn-danger[href= buys_order_path]
             | 注文確認・確定画面へ進む
+          -if current_user.admin?
+          .col-md-two-1
+           =link_to 'この写真フォルダを削除する', article_path(@article), method: :delete, class: 'btn btn-info'
+           
            
               
     .py-3
