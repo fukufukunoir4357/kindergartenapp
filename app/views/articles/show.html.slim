@@ -24,9 +24,18 @@ html
             .btn-group
               -if current_user.already_bought?(pic)
                =button_to '−', picture_buy_path(@article, picture_id: pic), method: :delete, class:'btn btn-danger active btn-lg p-1'
-              .btn.btn-light.p-1  #{pic.buys.count}枚
+              -@buys_count = Buy.where(user_id: current_user.id).where(picture_id: pic.id).count
+              .btn.btn-light.p-1  #{@buys_count}枚
               =button_to '＋', picture_buys_path(@article, picture_id: pic), class:'btn btn-secondary active btn-lg p-1'
-              
+        .row.justify-content-center      
+          
+          .col-md-two-1
+           a.btn.btn-warning[href= articles_path]
+            |　前に戻る
+          
+          .col-md-two-1
+           a.btn.btn-danger[href= admin_admin_menue_order_path]
+            | 注文確認・確定画面へ進む
            
               
     .py-3

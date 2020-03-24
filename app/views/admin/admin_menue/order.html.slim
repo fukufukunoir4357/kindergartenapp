@@ -26,7 +26,7 @@ html
                   br
                   b
                     u
-                      | １０枚
+                      p #{current_user.buys.count}枚
                   br
                   span.text-dark
                     br
@@ -35,7 +35,7 @@ html
                     br
                     u.text-danger
                       b
-                        | １０００円
+                        p #{current_user.buys.count*108}円
                   br
                   br
                   | です
@@ -52,15 +52,17 @@ html
                 | あなたのご注文写真一覧
             p.lead
               | ※写真、注文数にお間違いがないか再度ご確認ください。
-        .row
-          .col-lg-3.col-md-12.p-3.text-center
-            img.img-fluid.d-block[src="https://static.pingendo.com/img-placeholder-1.svg"]
-            a.btn.btn-light[href="#"]
-              | 減らす
-            a.btn.btn-dark[href="#"]
-              | 枚数
-            a.btn.btn-secondary[href="#"]
-              | 増やす
+        .d-flex.flex-wrap
+          .row.text-center
+           -@pictures.each do |pic|
+             .col-lg-3.col-md-3.p-2
+                =image_tag pic.image.url(:medium)
+                .btn-group
+                  -if current_user.already_bought?(pic)
+                   =button_to '−', picture_decrease_path(picture_id: pic), method: :delete, class:'btn btn-danger active btn-lg p-1'
+                  -@buys_count = Buy.where(user_id: current_user.id).where(picture_id: pic.id).count
+                  .btn.btn-light.p-1  #{@buys_count}枚
+                  =button_to '＋', picture_increase_path(picture_id: pic), class:'btn btn-secondary active btn-lg p-1'
     .py-5.bg-light
       .container.bg-danger
         .row
@@ -76,10 +78,10 @@ html
                 h2
                   b
                     | お間違いなければ下の確定ボタンを押してください。
-                a.btn.btn-primary[href="#"]
+                a.btn.btn-primary[href= admin_admin_menue_thanks_path]
                   b
                     | 注文確定する
-            a.btn.btn-secondary[href="#"]
+            a.btn.btn-secondary[href= '#']
               | 前のページに戻る
     .py-3
       .container

@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, on: :create
   has_many :buys
-  has_many :bought_pictures, through: :buys, source: :pictures
+  has_many :pictures, through: :buys, source: :picture
   
   def already_bought?(picture)
       self.buys.exists?(picture_id: picture.id)

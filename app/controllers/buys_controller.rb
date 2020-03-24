@@ -14,4 +14,16 @@ class BuysController < ApplicationController
       redirect_back(fallback_location: article_path(:article_id))
   end
   
+  def increase
+      @buy = current_user.buys.create(picture_id: params[:picture_id])
+      redirect_back(fallback_location: admin_admin_menue_order_path(current_user))
+  end
+  
+  def decrease
+      @buy = Buy.find_by(picture_id: params[:picture_id], user_id: current_user.id)
+      @buy.destroy
+      redirect_back(fallback_location: admin_admin_menue_order_path(current_user))
+  end
+  
+  
 end
