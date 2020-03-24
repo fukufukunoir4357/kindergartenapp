@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
   resources :articles
-
+  
+  get 'buys/order'
+  get 'buys/thanks'
   post 'articles/:article_id/:picture_id/buys', to: 'buys#create', as: 'picture_buys'
   delete 'articles/:article_id/:picture_id/buys', to: 'buys#destroy', as: 'picture_buy'
   post 'admin/admin_menue/order/:picture_id', to: 'buys#increase', as: 'picture_increase'
@@ -31,8 +33,6 @@ Rails.application.routes.draw do
     get 'admin_menue/users_index'
     get 'admin_menue/search'
     get 'admin_menue/article_menue'
-    get 'admin_menue/order'
-    get 'admin_menue/thanks'
   end
   
   get 'private_topics/index'

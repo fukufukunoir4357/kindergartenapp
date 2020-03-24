@@ -6,42 +6,9 @@ html
     link[rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"]
     link[rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css"]
   body[style=""]
-    nav.navbar.navbar-expand-md.bg-warning.navbar-light[style=""]
-      a.navbar-brand[href="#"]
-        b
-          | 八王子すみれ幼稚園
-      .container
-        button.navbar-toggler.navbar-toggler-right[type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation" style=""]
-          span.navbar-toggler-icon
-        #navbar2SupportedContent.collapse.navbar-collapse.text-center.justify-content-between
-          ul.navbar-nav
-            li.nav-item
-              a.nav-link.mx-2[href="#"]
-                | 園の歴史
-            li.nav-item
-              a.nav-link.mx-2[href="#"]
-                | 園の生活
-            li.nav-item
-              a.nav-link.mx-2[href="#"]
-                | 子育て支援内容
-            li.nav-item
-              a.nav-link.mx-2[href="#"]
-                | 入園案内
-            li.nav-item
-              a.nav-link.mx-2[href="#"]
-                | お知らせ
-            li.nav-item
-              a.nav-link.mx-2[href="#"]
-                i.fa.fa-user.fa-fw
-                | リクルート
-            li.nav-item
-              a.nav-link.mx-2[href="#"]
-                | アクセス
-            li.nav-item
-              a.nav-link.mx-2[href="#"]
-                | 問合せ
-          a.btn.btn-default.navbar-btn.btn-success[style=""]
-            | 在園児保護者ログイン
+    
+    ==render 'static_pages/navigation'
+    
     .py-5.align-items-center.d-flex.bg-primary[style=""]
       .container.py-5.text-center
         .row
@@ -60,7 +27,7 @@ html
                 | 多摩信用金庫のご口座からご注文翌月末に他の費用と同時に引き落としとなります。
         .row
           .col-md-12
-            a.btn.btn-secondary[href="#"]
+            a.btn.btn-secondary[href= private_topics_index_path]
               b
                 | お知らせ一覧ページに戻る
     .py-3

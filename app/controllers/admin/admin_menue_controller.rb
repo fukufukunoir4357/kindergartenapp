@@ -1,5 +1,5 @@
 class Admin::AdminMenueController < ApplicationController
-  
+  #管理者でなければルートに弾く 
  before_action :if_not_admin
   
   #管理者TOPメニュー表示
@@ -27,6 +27,7 @@ class Admin::AdminMenueController < ApplicationController
   #写真管理メニュー表示
   def article_menue
   end
+
   
   
   
