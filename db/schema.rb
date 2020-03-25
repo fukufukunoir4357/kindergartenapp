@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_23_081932) do
+ActiveRecord::Schema.define(version: 2020_03_25_005150) do
 
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -44,6 +44,16 @@ ActiveRecord::Schema.define(version: 2020_03_23_081932) do
     t.binary "upload_file"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "picture_id"
+    t.integer "howmany"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["picture_id"], name: "index_payments_on_picture_id"
+    t.index ["user_id"], name: "index_payments_on_user_id"
   end
 
   create_table "pictures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -89,4 +99,6 @@ ActiveRecord::Schema.define(version: 2020_03_23_081932) do
 
   add_foreign_key "buys", "pictures"
   add_foreign_key "buys", "users"
+  add_foreign_key "payments", "pictures"
+  add_foreign_key "payments", "users"
 end

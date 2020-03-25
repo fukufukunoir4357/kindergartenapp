@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  
   root 'static_pages#home'
   resources :articles
+  
+  get 'payments/create'
   
   get 'buys/index'
   get 'buys/order'
