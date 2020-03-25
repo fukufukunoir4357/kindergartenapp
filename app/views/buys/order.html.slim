@@ -78,9 +78,7 @@ html
                 h2
                   b
                     | お間違いなければ下の確定ボタンを押してください。
-                a.btn.btn-primary[href= buys_thanks_path]
-                  b
-                    | 注文確定する
+                =link_to '注文を確定する', payments_create_path, class: 'btn btn-warning'
             a.btn.btn-secondary[href= articles_path]
               | 前のページに戻る
     .py-3

@@ -1,8 +1,0 @@
-p 注文状況
--@users.each do |user|
- p #{user.pictures.map(&:image_file_name).flatten}
- p #{user.name}
- p #{user.buys.count}
- -user.pictures.each do |pic| 
-   p #{pic.image_file_name}
-   p #{pic.users.count}
