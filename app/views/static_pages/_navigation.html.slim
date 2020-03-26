@@ -33,7 +33,7 @@
               a.nav-link.mx-2[href= static_pages_access_path]
                 | アクセス
             li.nav-item
-              a.nav-link.mx-2[href= new_user_contact_path]
+              a.nav-link.mx-2[href= new_admin_contact_path]
                 | 問合せ
           - if logged_in? && current_user.admin?
            = link_to '管理者メニューへ', admin_admin_menue_index_path, class: 'btn btn-default navbar-btn btn-primary'
