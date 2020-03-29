@@ -2,11 +2,11 @@ class PublicTopicsController < ApplicationController
 #一般公開向けお知らせ用  
   
   def index
-    @public_topics = PublicTopic.all
+    @public_topics = PublicTopic.all.order(created_at: :desc)
   end
 
   def new
-    @public_topics = PublicTopic.all
+    @public_topics = PublicTopic.all.order(created_at: :desc)
     @public_topic = PublicTopic.new
   end
 

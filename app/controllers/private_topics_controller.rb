@@ -4,7 +4,7 @@ class PrivateTopicsController < ApplicationController
 before_action :if_not_login_user
   
   def index   #お知らせ一覧取得
-    @private_topics = PrivateTopic.all
+    @private_topics = PrivateTopic.all.order(created_at: :desc)
   end
 
   def new     #投稿画面表示
