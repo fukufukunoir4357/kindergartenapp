@@ -29,7 +29,7 @@ html
                 a.btn.btn-primary[href="#"]
                   i.fa.fa-download.fa-fw
                   |  添付資料ダウンロード
-              -if current_user.admin?
+              -if current_user&.admin?
                   .col-md-five-1
                     a.btn.btn-danger[href= public_topics_edit_path(topic.id)]
                       |編集する
