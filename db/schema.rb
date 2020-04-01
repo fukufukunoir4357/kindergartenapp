@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_25_020439) do
+ActiveRecord::Schema.define(version: 2020_04_01_072206) do
 
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 2020_03_25_020439) do
     t.datetime "updated_at", null: false
     t.index ["picture_id"], name: "index_buys_on_picture_id"
     t.index ["user_id"], name: "index_buys_on_user_id"
+  end
+
+  create_table "checks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "private_topic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["private_topic_id"], name: "index_checks_on_private_topic_id"
+    t.index ["user_id"], name: "index_checks_on_user_id"
   end
 
   create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -101,6 +110,8 @@ ActiveRecord::Schema.define(version: 2020_03_25_020439) do
 
   add_foreign_key "buys", "pictures"
   add_foreign_key "buys", "users"
+  add_foreign_key "checks", "private_topics"
+  add_foreign_key "checks", "users"
   add_foreign_key "payments", "pictures"
   add_foreign_key "payments", "users"
 end
