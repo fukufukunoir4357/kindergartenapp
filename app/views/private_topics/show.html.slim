@@ -29,9 +29,9 @@ html
                     a.btn.btn-primary[href= private_topics_index_path]
                       |前画面に戻る
                 .col-md-six-1
-                  a.btn.text-white[href="#" style="background: rgb(229, 45, 39);" target="_blank"]
+                  =link_to '確認しました！', user_checks_path(private_topic_id: @private_topic.id, user_id: current_user.id), method: :post, class: 'btn btn-danger text-white'
                     i.fa.fa-user.fa-fw
-                    | 確認しました！
+               
                 .col-md-six-1
                   a.btn.btn-primary[href="#"]
                     i.fa.fa-download.fa-fw

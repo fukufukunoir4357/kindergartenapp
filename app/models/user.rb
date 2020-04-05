@@ -8,7 +8,8 @@ class User < ApplicationRecord
   has_many :buys
   has_many :pictures, through: :buys, source: :picture
   has_many :payments
-  
+  has_many :checks
+  has_many :private_topics, through: :checks, source: :private_topic
   
   def already_bought?(picture)
       self.buys.exists?(picture_id: picture.id)
